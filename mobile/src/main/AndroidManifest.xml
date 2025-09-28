@@ -82,10 +82,6 @@
                 android:resource="@xml/file_paths" />
         </provider> <!-- REDESIGN 07/22 -->
         <!--E2E done-->
-        <activity
-            android:name=".features.demo.wifi_throughput.activities.WifiThroughputActivity"
-            android:exported="false"
-            android:theme="@style/MainAppTheme.NoActionBar" />
         <!--E2E done-->
         <activity
             android:theme="@style/MainAppTheme.NoActionBar"
@@ -108,35 +104,9 @@
             android:screenOrientation="sensorPortrait"
             tools:ignore="DiscouragedApi" />
         <!--E2E done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.blinky.activities.BlinkyActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
-        <!--E2E done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.connected_lighting.activities.ConnectedLightingActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
         <!--E2E  done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.range_test.activities.RangeTestActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
         <!--E2E  done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.throughput.activities.ThroughputActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
         <!--E2E  done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.wifi_commissioning.activities.WifiCommissioningActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
         <!--E2E done-->
         <activity
             android:theme="@style/MainAppTheme.NoActionBar"
@@ -150,42 +120,12 @@
             android:screenOrientation="sensorPortrait"
             tools:ignore="DiscouragedApi" />
         <!--E2E  done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.thunderboard_demos.demos.motion.activities.MotionActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
         <!--E2E done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.thunderboard_demos.demos.environment.activities.EnvironmentActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
         <!--E2E  done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.thunderboard_demos.demos.blinky_thunderboard.activities.BlinkyThunderboardActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
         <!--E2E done-->
-        <activity
-            android:theme="@style/MainAppTheme.NoActionBar"
-            android:name=".features.demo.esl_demo.activities.EslDemoActivity"
-            android:screenOrientation="sensorPortrait"
-            tools:ignore="DiscouragedApi" />
         <!--E2E  done-->
-        <activity
-            android:name=".features.demo.matter_demo.activities.MatterDemoActivity"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/MainAppTheme.NoActionBar"
-            tools:ignore="DiscouragedApi" />
         <!--E2E done-->
-        <activity
-            android:name=".features.demo.devkitsensor917.activities.DevKitSensor917Activity"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/MainAppTheme.NoActionBar"
-            tools:ignore="DiscouragedApi" />
-        <activity
+<activity
             android:name=".home_screen.activities.MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="sensorPortrait"
@@ -210,17 +150,7 @@
             android:theme="@style/Theme.SiConnectApp"
             tools:ignore="DiscouragedApi" />
         <!--E2E  done-->
-        <activity
-            android:name=".features.demo.wifi_provisioning.activities.WiFiProvisioningActivity"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/MainAppTheme.NoActionBar"
-            tools:ignore="DiscouragedApi"  />
         <!--E2E done-->
-        <activity
-            android:name=".features.demo.awsiot.AWSIOTDemoActivity"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/MainAppTheme.NoActionBar"
-            tools:ignore="DiscouragedApi" />
         <!--E2E not done-->
     </application>
 
