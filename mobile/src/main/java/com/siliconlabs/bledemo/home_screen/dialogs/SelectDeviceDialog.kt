@@ -346,14 +346,10 @@ class SelectDeviceDialog(
                     getString(R.string.demo_firmware_name_esl)
                 )
 
-                GattConnectType.AWS_DEMO -> {
-                    getString(R.string.aws_iot_selection_ble_title)
-                }
-
                 else -> getString(R.string.empty_description)
             }
 
-            if (connectType == GattConnectType.WIFI_COMMISSIONING || connectType == GattConnectType.AWS_DEMO) {
+            if (connectType == GattConnectType.WIFI_COMMISSIONING) {
                 movementMethod = LinkMovementMethod.getInstance() // react to clicking the link
             }
         }
@@ -482,9 +478,6 @@ class SelectDeviceDialog(
             GattConnectType.DEV_KIT_SENSOR -> {
                 add(buildFilter(BuildFilterName.DEV_KIT_SENSOR))
             }
-            GattConnectType.AWS_DEMO -> {
-                add(buildFilter(BuildFilterName.BLE_CONFIGURATOR))
-            }
             else -> Unit
         }
     }
@@ -538,13 +531,12 @@ class SelectDeviceDialog(
             GattConnectType.ENVIRONMENT -> EnvironmentActivity::class.java
             GattConnectType.ESL_DEMO -> EslDemoActivity::class.java
             GattConnectType.DEV_KIT_SENSOR -> WifiCommissioningActivity::class.java
-            GattConnectType.AWS_DEMO -> WifiCommissioningActivity::class.java
 
             else -> null
         }
 
         val intent = clazz?.let { Intent(activity, it) }
-        if (connectType == GattConnectType.WIFI_COMMISSIONING || connectType == GattConnectType.DEV_KIT_SENSOR || connectType == GattConnectType.AWS_DEMO)  {
+        if (connectType == GattConnectType.WIFI_COMMISSIONING || connectType == GattConnectType.DEV_KIT_SENSOR)  {
             intent?.putExtra("connectType", connectType)
         }
         return intent

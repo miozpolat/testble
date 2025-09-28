@@ -118,7 +118,6 @@ class BluetoothService : LocalService<BluetoothService>() {
         WIFI_OTA_UPDATE,
         DEV_KIT_SENSOR,
         WIFI_THROUGHPUT_TEST,
-        AWS_DEMO,
         WIFI_PROVISIONING,
         NOTHING
     }
@@ -396,8 +395,7 @@ class BluetoothService : LocalService<BluetoothService>() {
                     GattConnectType.ENVIRONMENT,
                     GattConnectType.WIFI_COMMISSIONING,
                     GattConnectType.ESL_DEMO,
-                    GattConnectType.DEV_KIT_SENSOR,
-                    GattConnectType.AWS_DEMO -> true
+                    GattConnectType.DEV_KIT_SENSOR -> true
                     else -> false
                 }
 
@@ -462,8 +460,7 @@ class BluetoothService : LocalService<BluetoothService>() {
             GattConnectType.ENVIRONMENT,
             GattConnectType.WIFI_COMMISSIONING,
             GattConnectType.ESL_DEMO,
-            GattConnectType.DEV_KIT_SENSOR,
-            GattConnectType.AWS_DEMO -> true
+            GattConnectType.DEV_KIT_SENSOR -> true
 
             else -> false
         }
@@ -570,8 +567,7 @@ class BluetoothService : LocalService<BluetoothService>() {
             GattConnectType.ENVIRONMENT,
             GattConnectType.WIFI_COMMISSIONING,
             GattConnectType.ESL_DEMO,
-            GattConnectType.DEV_KIT_SENSOR,
-            GattConnectType.AWS_DEMO -> 0L
+            GattConnectType.DEV_KIT_SENSOR -> 0L
 
             else -> 1000L
         }

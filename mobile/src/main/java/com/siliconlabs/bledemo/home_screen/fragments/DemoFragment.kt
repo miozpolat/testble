@@ -32,7 +32,7 @@ import com.siliconlabs.bledemo.home_screen.base.BaseServiceDependentMainMenuFrag
 import com.siliconlabs.bledemo.home_screen.base.BluetoothDependent
 import com.siliconlabs.bledemo.home_screen.base.LocationDependent
 import com.siliconlabs.bledemo.home_screen.dialogs.SelectDeviceDialog
-import com.siliconlabs.bledemo.home_screen.menu_items.AWSIOTDemo
+
 import com.siliconlabs.bledemo.home_screen.menu_items.Blinky
 import com.siliconlabs.bledemo.home_screen.menu_items.ConnectedLighting
 import com.siliconlabs.bledemo.home_screen.menu_items.DemoMenuItem
@@ -190,13 +190,7 @@ class DemoFragment : BaseServiceDependentMainMenuFragment(), DemoAdapter.OnDemoI
                     getString(R.string.wifi_provisioning_description)
                 )
             )
-            add(
-                AWSIOTDemo(
-                    R.drawable.ic_aws_iot_icon,
-                    getString(R.string.aws_title),
-                    getString(R.string.aws_desc)
-                )
-            )
+
 
         }
     }
