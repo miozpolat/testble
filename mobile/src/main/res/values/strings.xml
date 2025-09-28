@@ -1345,33 +1345,6 @@
     <string name="time_out_access_point_failed">Timeout expired</string>
 
 
-    <!--    AWS IOP Demo-->
-    <string name="aws_title">AWS IoT</string>
-    <string name="aws_desc">Add / commission a device and read or control it over AWS IoT Cloud.</string>
-    <string name="enter_topic_for_publish_n_subscribe">Enter Topic for Publish\n &amp; Subscribe</string>
-    <string name="aws_iot_selection_ble_title">"1. The SoC and evaluation board (EVK) must be connected and running the correct firmware.\n\&#10;2. The Wi-Fi network must have internet access to be used for the sensor device's commissioning."</string>
-    <string name="aws_dashboard">AWS Dashboard</string>
-    <string name="connecting_to_aws">Connecting to AWS</string>
-    <string name="connection_successful">Connection successful</string>
-    <string name="publish_failed">Publish failed</string>
-    <string name="subscription_failed">Subscription failed</string>
-    <string name="loading_data">Loading Data…</string>
-    <string name="subscribing_to_the_entered_topic">Subscribing to the entered topic</string>
-    <string name="disconnecting_from_aws_iot">Disconnecting from AWS IOT…</string>
-    <string name="subscription_timeout">Subscription Timeout</string>
-    <string name="no_mess_received_within_thirtysec">No messages received within 30 seconds. Please re-enter publish and subscribe topics.</string>
-    <string name="retry">Retry</string>
-    <string name="cancel">Cancel</string>
-    <string name="aws_temperature">temperature</string>
-    <string name="aws_humidity">humidity</string>
-    <string name="aws_ambient_light">ambient_light</string>
-    <string name="aws_white_light">white_light</string>
-    <string name="aws_accelerometer">accelerometer</string>
-    <string name="aws_gyro">gyro</string>
-    <string name="aws_led">LED</string>
-    <string name="subscribe_and_publish_topics_should_not_be_empty">Subscribe and publish topics should not be empty</string>
-    <string name="subscribe_topic_should_not_be_empty">Subscribe topic should not be empty</string>
-    <string name="publish_topic_should_not_be_empty">Publish topic should not be empty</string>
     <string name="icd_registration_completed">ICD device registration completed, How to trigger to switch to Active Mode : %1$s</string>
     <string name="matter_light_switch">Light Switch</string>
     <string name="matter_light_switch_control">Light Switch Binding</string>

@@ -33,7 +33,7 @@ import com.siliconlabs.bledemo.bluetooth.ble.GattService
 import com.siliconlabs.bledemo.bluetooth.ble.TimeoutGattCallback
 import com.siliconlabs.bledemo.bluetooth.services.BluetoothService
 import com.siliconlabs.bledemo.databinding.ActivityWifiCommissioningBinding
-import com.siliconlabs.bledemo.features.demo.awsiot.AWSIOTDemoActivity
+
 import com.siliconlabs.bledemo.features.demo.devkitsensor917.activities.DevKitSensor917Activity
 import com.siliconlabs.bledemo.features.demo.devkitsensor917.activities.DevKitSensor917Activity.Companion.IP_ADDRESS
 import com.siliconlabs.bledemo.utils.Converters
@@ -207,29 +207,6 @@ class WifiCommissioningActivity : BaseDemoActivity() {
 
                 }
 
-                BluetoothService.GattConnectType.AWS_DEMO -> {
-
-                    showToastOnUi(getString(R.string.ap_connect))
-                    connectedAccessPoint = clickedAccessPoint
-                    connectedAccessPoint?.status = true
-                    runOnUiThread { accessPointsAdapter?.notifyDataSetChanged() }
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        val devKitIntent = Intent(
-                            this,
-                            AWSIOTDemoActivity::class.java
-                        ).apply {
-                            putExtra(IP_ADDRESS, clickedAccessPoint?.ipAddress)
-                        }
-                        storeInfo(clickedAccessPoint!!.ipAddress!!)
-                        println("BLE_PROV ipAddress:${clickedAccessPoint!!.ipAddress}")
-                        startActivity(devKitIntent)
-                        this.finish()
-                    },5000)
-
-
-
-                }
-
                 else -> null
             }
         } else {
@@ -249,13 +226,6 @@ class WifiCommissioningActivity : BaseDemoActivity() {
                 }
 
                 BluetoothService.GattConnectType.DEV_KIT_SENSOR -> {
-                    connectedAccessPoint = null
-                    scanForAccessPoints()
-                    toggleMainView(isAccessPointConnected = false)
-                    showToastOnUi(getString(R.string.ap_disconnect_success))
-                }
-
-                BluetoothService.GattConnectType.AWS_DEMO -> {
                     connectedAccessPoint = null
                     scanForAccessPoints()
                     toggleMainView(isAccessPointConnected = false)
@@ -287,19 +257,6 @@ class WifiCommissioningActivity : BaseDemoActivity() {
                     val devKitIntent = Intent(
                         this,
                         DevKitSensor917Activity::class.java
-                    ).apply {
-                        putExtra(IP_ADDRESS, getInfo())
-                    }
-                    println("BLE_PROV ipAddress:${getInfo()}")
-                    startActivity(devKitIntent)
-                    this.finish()
-                }
-
-                BluetoothService.GattConnectType.AWS_DEMO -> {
-
-                    val devKitIntent = Intent(
-                        this,
-                        AWSIOTDemoActivity::class.java
                     ).apply {
                         putExtra(IP_ADDRESS, getInfo())
                     }
@@ -346,19 +303,9 @@ class WifiCommissioningActivity : BaseDemoActivity() {
             setMessage(dialogMessage)
             setPositiveButton(getString(R.string.yes)) { dialog: DialogInterface, _: Int ->
                 showProgressDialog(getString(R.string.disconnect_ap))
-                if(connectType == BluetoothService.GattConnectType.AWS_DEMO){
-                    handler.postDelayed(timeoutRunnable, twentySeconds) // Schedule timeout
-                    // handler.postDelayed({
-                    writeCommand(BoardCommand.Send.DISCONNECTION)
-                    dialog.cancel()
-                    /*if (!isFinishing) {
-                        showTimeOutMessageAndFinish()
-                    }*/
-                    //}, twentySeconds)
-                }else{
-                    writeCommand(BoardCommand.Send.DISCONNECTION)
-                    dialog.cancel()
-                }
+                handler.postDelayed(timeoutRunnable, twentySeconds) // Schedule timeout
+                writeCommand(BoardCommand.Send.DISCONNECTION)
+                dialog.cancel()
             }
             setNegativeButton(getString(R.string.no)) { dialog: DialogInterface, _: Int ->
                 isItemClicked = false
